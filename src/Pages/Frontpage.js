@@ -32,7 +32,7 @@ export const Frontpage = () => {
               </StyledDiv>
               <div>
                 <StyledImg src={item.post} />
-                <StyledDiv lowerPost>
+                <StyledDiv icons>
                   <HeartIcon />
                   <CommentIcon />
                   <MessageIcon />

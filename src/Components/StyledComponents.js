@@ -36,7 +36,7 @@ export const StyledDiv = styled.div`
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #c6c6c6;
-  padding: 0.625em;
+  padding: 0.625em 0;
   background-color: white;
   width: 25%;
   @media (max-width: 811px) {
@@ -48,6 +48,7 @@ export const StyledDiv = styled.div`
     justify-content: center;
     border: none;
     flex-direction: column;
+    padding: 0.625em 0;
 `;
   }}
   ${(props) => {
@@ -58,16 +59,18 @@ export const StyledDiv = styled.div`
     justify-content: flex-start;
     text-align: left;
     gap: 0.5em;
-    padding: 0.625em;
+    padding: 0 0.625em 0.625em;
     width: 90%;
     `;
   }}
   ${(props) => {
-    if (props.lowerPost)
+    if (props.icons)
       return `
     gap: 1em;
     border: none;
-    justify-content: flex-start;`;
+    justify-content: flex-start;
+    padding: 0.625em 0.625em 0;
+    `;
   }}
   ${(props) => {
     if (props.comment)
@@ -75,13 +78,23 @@ export const StyledDiv = styled.div`
     border: none;
     justify-content: flex-start;
     text-align: left;
-    padding: 0.625em;
+    padding: 0 0.625em 0.625em 0.625em;
     width: fit-content;`;
+  }}
+  ${(props) => {
+    if (props.lowerPost)
+      return `
+    gap: 1em;
+    border: none;
+    justify-content: flex-start;
+    padding: 0.625em;
+    `;
   }}
 `;
 
 export const NoMarginP = styled.p`
   margin: 0;
+  font-size: 0.8125rem;
   ${(props) => {
     if (props.bold)
       return `
