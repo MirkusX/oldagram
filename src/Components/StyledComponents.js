@@ -58,7 +58,8 @@ export const StyledDiv = styled.div`
     justify-content: flex-start;
     text-align: left;
     gap: 0.5em;
-    padding: 0.625em 0;
+    padding: 0.625em;
+    width: 90%;
     `;
   }}
   ${(props) => {
