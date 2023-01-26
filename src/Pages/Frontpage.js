@@ -1,11 +1,11 @@
 import {
+  CommentIcon,
   HeartIcon,
-  Logo,
+  MessageIcon,
   NoMarginP,
   StyledDiv,
-  StyledInnerDiv,
+  StyledImg,
   StyledSection,
-  StyledUpperDiv,
 } from "../Components/StyledComponents";
 import avatar from "../Images/your-avatar.png";
 import logo from "../Images/oldagram-logo.png";
@@ -29,8 +29,12 @@ export const Frontpage = () => {
               </div>
             </StyledDiv>
             <div>
-              <img src={item.post} />
-              <HeartIcon />
+              <StyledImg src={item.post} />
+              <StyledDiv upperPost>
+                <HeartIcon />
+                <CommentIcon />
+                <MessageIcon />
+              </StyledDiv>
             </div>
           </StyledDiv>
         );

@@ -1,7 +1,12 @@
 import styled from "styled-components";
-import { FiHeart } from "react-icons/fi";
+import { FiHeart, FiSend } from "react-icons/fi";
+import { FaRegComment } from "react-icons/fa";
 
 export const HeartIcon = styled(FiHeart)``;
+
+export const CommentIcon = styled(FaRegComment)``;
+
+export const MessageIcon = styled(FiSend)``;
 
 export const StyledSection = styled.section`
   display: flex;
@@ -42,4 +47,9 @@ export const NoMarginP = styled.p`
       return `
     font-weight: bold;`;
   }}
+`;
+
+export const StyledImg = styled.img`
+  min-width: 100%;
+  min-height: 100%;
 `;
