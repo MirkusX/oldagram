@@ -58,6 +58,13 @@ export const StyledDiv = styled.div`
     border: none;
     justify-content: flex-start;`;
   }}
+  ${(props) => {
+    if (props.comment)
+      return `
+    border: none;
+    justify-content: flex-start;
+    text-align: left;`;
+  }}
 `;
 
 export const NoMarginP = styled.p`
@@ -88,4 +95,8 @@ export const StyledImg = styled.img`
     min-height: auto;
     `;
   }}
+`;
+
+export const StyledSpan = styled.span`
+  font-weight: bold;
 `;
