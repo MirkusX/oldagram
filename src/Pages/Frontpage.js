@@ -1,6 +1,8 @@
 import {
+  HeartIcon,
   Logo,
   NoMarginP,
+  StyledDiv,
   StyledInnerDiv,
   StyledSection,
   StyledUpperDiv,
@@ -12,21 +14,25 @@ import { posts } from "./FrontpageFiles/FrontpageTextConsts";
 export const Frontpage = () => {
   return (
     <StyledSection>
-      <StyledUpperDiv>
+      <StyledDiv>
         <img src={logo} />
         <img src={avatar} />
-      </StyledUpperDiv>
+      </StyledDiv>
       {posts.map((item, index) => {
         return (
-          <StyledUpperDiv upperPost>
-            <div>
+          <StyledDiv post>
+            <StyledDiv upperPost>
               <img src={item.avatar} />
+              <div>
+                <NoMarginP bold>{item.name}</NoMarginP>
+                <NoMarginP>{item.location}</NoMarginP>
+              </div>
+            </StyledDiv>
+            <div>
+              <img src={item.post} />
+              <HeartIcon />
             </div>
-            <StyledInnerDiv>
-              <NoMarginP>{item.name}</NoMarginP>
-              <NoMarginP>{item.location}</NoMarginP>
-            </StyledInnerDiv>
-          </StyledUpperDiv>
+          </StyledDiv>
         );
       })}
     </StyledSection>
