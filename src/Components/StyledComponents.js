@@ -22,14 +22,23 @@ export const StyledSection = styled.section`
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  gap: 1.5625em;
+  width: 100%;
+  ${(props) => {
+    if (props.container)
+      return `
+    gap: 0;
+    `;
+  }}
 `;
 
 export const StyledDiv = styled.div`
-  width: 25%;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #c6c6c6;
   padding: 0.625em;
+  background-color: white;
+  width: 25%;
   @media (max-width: 811px) {
     width: 100%;
   }
@@ -49,6 +58,7 @@ export const StyledDiv = styled.div`
     justify-content: flex-start;
     text-align: left;
     gap: 0.5em;
+    padding: 0.625em 0;
     `;
   }}
   ${(props) => {
@@ -63,7 +73,9 @@ export const StyledDiv = styled.div`
       return `
     border: none;
     justify-content: flex-start;
-    text-align: left;`;
+    text-align: left;
+    padding: 0.625em;
+    width: fit-content;`;
   }}
 `;
 
