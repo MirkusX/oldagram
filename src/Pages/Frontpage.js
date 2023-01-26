@@ -15,8 +15,8 @@ export const Frontpage = () => {
   return (
     <StyledSection>
       <StyledDiv>
-        <img src={logo} />
-        <img src={avatar} />
+        <StyledImg logo src={logo} />
+        <StyledImg avatar src={avatar} />
       </StyledDiv>
       {posts.map((item, index) => {
         return (
@@ -30,7 +30,7 @@ export const Frontpage = () => {
             </StyledDiv>
             <div>
               <StyledImg src={item.post} />
-              <StyledDiv upperPost>
+              <StyledDiv lowerPost>
                 <HeartIcon />
                 <CommentIcon />
                 <MessageIcon />

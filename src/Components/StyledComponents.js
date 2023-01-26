@@ -2,11 +2,20 @@ import styled from "styled-components";
 import { FiHeart, FiSend } from "react-icons/fi";
 import { FaRegComment } from "react-icons/fa";
 
-export const HeartIcon = styled(FiHeart)``;
+export const HeartIcon = styled(FiHeart)`
+  width: 25px;
+  height: 25px;
+`;
 
-export const CommentIcon = styled(FaRegComment)``;
+export const CommentIcon = styled(FaRegComment)`
+  width: 25px;
+  height: 25px;
+`;
 
-export const MessageIcon = styled(FiSend)``;
+export const MessageIcon = styled(FiSend)`
+  width: 25px;
+  height: 25px;
+`;
 
 export const StyledSection = styled.section`
   display: flex;
@@ -20,7 +29,10 @@ export const StyledDiv = styled.div`
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #c6c6c6;
-  padding: 1em 0;
+  padding: 0.625em;
+  @media (max-width: 811px) {
+    width: 100%;
+  }
   ${(props) => {
     if (props.post)
       return `
@@ -36,7 +48,15 @@ export const StyledDiv = styled.div`
     border: none;
     justify-content: flex-start;
     text-align: left;
+    gap: 0.5em;
     `;
+  }}
+  ${(props) => {
+    if (props.lowerPost)
+      return `
+    gap: 1em;
+    border: none;
+    justify-content: flex-start;`;
   }}
 `;
 
@@ -52,4 +72,20 @@ export const NoMarginP = styled.p`
 export const StyledImg = styled.img`
   min-width: 100%;
   min-height: 100%;
+  ${(props) => {
+    if (props.logo)
+      return `
+    margin-left: 0.625em;
+    min-width: auto;
+    min-height: auto;
+    `;
+  }}
+  ${(props) => {
+    if (props.avatar)
+      return `
+    margin-right: 0.625em;
+    min-width: auto;
+    min-height: auto;
+    `;
+  }}
 `;
