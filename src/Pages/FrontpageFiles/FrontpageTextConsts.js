@@ -1,9 +1,9 @@
 import postimage from "../../Images/post-image.png";
 import postimage1 from "../../Images/post-image1.png";
 import postimage2 from "../../Images/post-image2.png";
-import avatar from "../../Images/avatar.avif";
-import avatar1 from "../../Images/avatar2.avif";
-import avatar2 from "../../Images/avatar3.avif";
+import avatar from "../../Images/avatar.png";
+import avatar1 from "../../Images/avatar1.png";
+import avatar2 from "../../Images/avatar2.png";
 
 export const posts = [
   {
