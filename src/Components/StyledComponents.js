@@ -5,6 +5,11 @@ import { FaRegComment } from "react-icons/fa";
 export const HeartIcon = styled(FiHeart)`
   width: 25px;
   height: 25px;
+  ${(props) => {
+    if (props.red)
+      return `
+    fill: red;`;
+  }}
 `;
 
 export const CommentIcon = styled(FaRegComment)`
@@ -125,4 +130,11 @@ export const StyledImg = styled.img`
 
 export const StyledSpan = styled.span`
   font-weight: bold;
+`;
+
+export const StyledButton = styled.button`
+  border: none;
+  background-color: inherit;
+  padding: 0;
+  cursor: pointer;
 `;
