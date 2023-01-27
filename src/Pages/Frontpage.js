@@ -26,10 +26,20 @@ export const Frontpage = () => {
     newArr[index].forEach((item, index) => {
       item.likes++;
     });
-    setHeart(!heart);
+    setHeart(true);
     setNumber(newArr);
     e.target.style.fill = "red";
     console.log(number);
+    if (heart === true) {
+      newArr = number;
+      e.target.style.fill = "white";
+      newArr[index].forEach((item, index) => {
+        --item.likes;
+      });
+      setHeart(false);
+      setNumber(newArr);
+    } else {
+    }
   };
   return (
     <StyledSection container>
