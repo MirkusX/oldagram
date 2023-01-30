@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { FiHeart, FiSend } from "react-icons/fi";
 import { FaRegComment } from "react-icons/fa";
 
+//stylings
+
 export const HeartIcon = styled(FiHeart)`
   width: 25px;
   height: 25px;

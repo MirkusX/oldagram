@@ -15,29 +15,34 @@ import { posts } from "./FrontpageFiles/FrontpageTextConsts";
 import { useState } from "react";
 
 export const Frontpage = () => {
+  //updates the like count
   const [heart, setHeart] = useState(false);
+  //state for likes count
   const [number, setNumber] = useState([
     [{ likes: 21 }],
     [{ likes: 4 }],
     [{ likes: 152 }],
   ]);
+  //array for temporary likes count storage
+  let newArr = [];
+  //turns the like button red, stores the likes state in newArr and then puts newArr back into likes state, changes heart state so dom updates
   const like = (index, e) => {
     if (e.target.style.fill === "red") {
-      const newArr = number;
+      e.target.style.fill = "white";
+      newArr = number;
       newArr[index].forEach((item, index) => {
         --item.likes;
       });
       setHeart(!heart);
       setNumber(newArr);
-      e.target.style.fill = "white";
     } else {
-      const newArr = number;
+      e.target.style.fill = "red";
+      newArr = number;
       newArr[index].forEach((item, index) => {
         item.likes++;
       });
       setHeart(!heart);
       setNumber(newArr);
-      e.target.style.fill = "red";
     }
   };
   return (
@@ -68,7 +73,7 @@ export const Frontpage = () => {
                 </StyledDiv>
                 {number[index].map((item, index) => {
                   return (
-                    <StyledDiv lowerPost>
+                    <StyledDiv lowerPost key={index}>
                       <NoMarginP bold liked={heart}>
                         {item.likes} likes
                       </NoMarginP>

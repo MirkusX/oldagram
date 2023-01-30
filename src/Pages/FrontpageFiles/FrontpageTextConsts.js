@@ -5,6 +5,7 @@ import avatar from "../../Images/avatar.png";
 import avatar1 from "../../Images/avatar1.png";
 import avatar2 from "../../Images/avatar2.png";
 
+//post information
 export const posts = [
   {
     name: "Vincent van Gogh",
