@@ -18,27 +18,26 @@ export const Frontpage = () => {
   const [heart, setHeart] = useState(false);
   const [number, setNumber] = useState([
     [{ likes: 21 }],
-    [{ likes: 1 }],
-    [{ likes: 3 }],
+    [{ likes: 4 }],
+    [{ likes: 152 }],
   ]);
   const like = (index, e) => {
-    const newArr = number;
-    newArr[index].forEach((item, index) => {
-      item.likes++;
-    });
-    setHeart(true);
-    setNumber(newArr);
-    e.target.style.fill = "red";
-    console.log(number);
-    if (heart === true) {
-      newArr = number;
-      e.target.style.fill = "white";
+    if (e.target.style.fill === "red") {
+      const newArr = number;
       newArr[index].forEach((item, index) => {
         --item.likes;
       });
-      setHeart(false);
+      setHeart(!heart);
       setNumber(newArr);
+      e.target.style.fill = "white";
     } else {
+      const newArr = number;
+      newArr[index].forEach((item, index) => {
+        item.likes++;
+      });
+      setHeart(!heart);
+      setNumber(newArr);
+      e.target.style.fill = "red";
     }
   };
   return (
@@ -68,7 +67,6 @@ export const Frontpage = () => {
                   <MessageIcon />
                 </StyledDiv>
                 {number[index].map((item, index) => {
-                  console.log("it ran");
                   return (
                     <StyledDiv lowerPost>
                       <NoMarginP bold liked={heart}>
